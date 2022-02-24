@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webserver</title>
+  </head>
+  <input id="brand" type="text" value="Toyota" />
+  <input id="model" type="text" value="Supra"/>
+  <input id="year" type="text" value="1996"/>
+  <button onclick="create();" type="button">Submit</button>
+
+  <body>
+    <script>
+      function create () {
+        var car = {
+          brand: document.getElementById('brand').value,
+          model: document.getElementById('model').value,
+          year: document.getElementById('year').value
+        };
+        var list_car = JSON.stringify(car);
+
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', 'http://127.0.0.1:5000//', true);
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
+        xhr.send(list_car);
+      }
+    </script>
+  </body>
+</html>
