@@ -22,7 +22,7 @@
         var list_car = JSON.stringify(car);
 
         var xhr = new XMLHttpRequest();
-        xhr.open('POST', 'http://127.0.0.1:5000//', true);
+        xhr.open('POST', 'http://127.0.0.1:5000/', true);
         xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded; charset=UTF-8');
         xhr.send(list_car);
       }
